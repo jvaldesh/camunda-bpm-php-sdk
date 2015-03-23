@@ -6,6 +6,7 @@ class HistoricActivityStatisticRequest extends Request {
   protected $canceled;
   protected $finished;
   protected $completeScope;
+  protected $processVariables;
   protected $sortBy;
   protected $sortOrder;
 
@@ -55,6 +56,22 @@ class HistoricActivityStatisticRequest extends Request {
    */
   public function getCompleteScope() {
     return $this->completeScope;
+  }
+
+  /**
+   * @param mixed $processVariables
+   * @return $this
+   */
+  public function setProcessVariables($processVariables) {
+    $this->processVariables = $processVariables;
+    return $this;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getProcessVariables() {
+    return $this->processVariables;
   }
 
   /**
