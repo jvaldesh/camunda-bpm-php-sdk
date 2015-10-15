@@ -29,6 +29,7 @@ class HistoricProcessInstanceRequest extends Request {
   protected $sortOrder;
   protected $firstResult;
   protected $maxResults;
+  protected $endActivityId;
 
   /**
    * @param mixed $finished
@@ -280,6 +281,20 @@ class HistoricProcessInstanceRequest extends Request {
    */
   public function getVariables() {
     return $this->variables;
+  }
+
+  /**
+   * @param mixed $endActivityId
+   */
+  public function setEndActivityId($endActivityId) {
+    $this->endActivityId = $endActivityId;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getEndActivityId() {
+    return $this->endActivityId;
   }
 
 
