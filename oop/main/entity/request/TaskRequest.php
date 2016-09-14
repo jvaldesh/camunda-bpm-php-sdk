@@ -47,6 +47,7 @@ class TaskRequest extends Request {
   protected $maxResults;
   protected $userId;
   protected $variables;
+  protected $includeAssignedTasks;
 
   /**
    * @param mixed $assignee
@@ -638,6 +639,22 @@ class TaskRequest extends Request {
    */
   public function getVariables() {
     return $this->variables;
+  }
+
+  /**
+   * @param mixed $includeAssignedTasks
+   * @return $this
+   */
+  public function setIncludeAssignedTask($includeAssignedTasks) {
+    $this->includeAssignedTasks = $includeAssignedTasks;
+    return $this;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getIncludeAssignedTasks() {
+    return $this->includeAssignedTasks;
   }
 
 
