@@ -645,7 +645,7 @@ class TaskRequest extends Request {
    * @param mixed $includeAssignedTasks
    * @return $this
    */
-  public function setIncludeAssignedTask($includeAssignedTasks) {
+  public function setIncludeAssignedTasks($includeAssignedTasks) {
     $this->includeAssignedTasks = $includeAssignedTasks;
     return $this;
   }
