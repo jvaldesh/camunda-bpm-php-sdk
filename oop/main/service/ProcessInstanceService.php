@@ -264,4 +264,25 @@ class ProcessInstanceService extends RequestService {
       throw $e;
     }
   }
+
+  /**
+   * Modify process instance execution state
+   * @link http://docs.camunda.org/manual/7.4/reference/rest/process-instance/post-modification/
+   *
+   * @param String $id process instance ID
+   * @param Array $request modification parameters
+   * @throws \Exception
+   */
+  public function modify($id, $request) {
+    $this->setRequestUrl('/process-instance/'.$id.'/modification');
+    $this->setRequestObject($request);
+    $this->setRequestMethod('POST');
+
+    try {
+      $this->execute();
+    } catch (Exception $e) {
+      throw $e;
+    }
+  }
 }
+
