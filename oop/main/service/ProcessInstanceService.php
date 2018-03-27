@@ -14,6 +14,7 @@ use org\camunda\php\sdk\entity\request\VariableRequest;
 use org\camunda\php\sdk\entity\response\Activity;
 use org\camunda\php\sdk\entity\response\ProcessInstance;
 use org\camunda\php\sdk\entity\response\Variable;
+use org\camunda\php\sdk\entity\request\ProcessInstanceModificationRequest;
 
 class ProcessInstanceService extends RequestService {
 
@@ -270,10 +271,10 @@ class ProcessInstanceService extends RequestService {
    * @link http://docs.camunda.org/manual/7.4/reference/rest/process-instance/post-modification/
    *
    * @param String $id process instance ID
-   * @param Array $request modification parameters
+   * @param ProcessInstanceModificationRequest $request modification parameters
    * @throws \Exception
    */
-  public function modify($id, $request) {
+  public function modify($id, ProcessInstanceModificationRequest $request) {
     $this->setRequestUrl('/process-instance/'.$id.'/modification');
     $this->setRequestObject($request);
     $this->setRequestMethod('POST');
